@@ -1,0 +1,13 @@
+[user]
+	name = Chandler May
+	email = chandler.camille.may@gmail.com
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout 3600
+[push]
+	default = simple
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
