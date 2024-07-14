@@ -2,7 +2,7 @@ set bs=indent,eol,start
 set nocompatible
 set viminfo='20,\"50
 set history=50
-set background=dark
+set background=light
 set nobackup
 set ruler
 set showcmd
