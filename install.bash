@@ -14,7 +14,7 @@ read answer
 if [[ "${answer,}" == y ]]
 then
         rm -rf "$DOTFILES_DST/.ipython"
-        cp -r "$DOTFILES_SRC"/.[^.]* "$DOTFILES_DST"/
+        cp -rv "$DOTFILES_SRC"/.[^.]* "$DOTFILES_DST"/
         echo "Done."
 else
         echo "Aborting." >&2
