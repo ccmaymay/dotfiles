@@ -1,0 +1,4 @@
+temporary-directory: /home/idies/workspace/megawika-ceph/dask-worker-space
+distributed:
+  worker:
+    use-file-locking: false
