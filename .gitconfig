@@ -1,6 +1,8 @@
 [user]
 	name = Chandler May
 	email = chandler.camille.may@gmail.com
+[commit]
+  gpgsign = true
 [color]
 	ui = true
 [credential]
