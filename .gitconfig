@@ -6,3 +6,6 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[user]
+	name = Chandler May
+	email = chandler.camille.may@gmail.com
