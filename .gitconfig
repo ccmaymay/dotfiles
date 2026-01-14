@@ -9,3 +9,7 @@
 [user]
 	name = Chandler May
 	email = chandler.camille.may@gmail.com
+[credential "https://github.com"]
+  helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !gh auth git-credential
