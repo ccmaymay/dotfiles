@@ -1,6 +1,3 @@
-[user]
-	name = Chandler May
-	email = chandler.camille.may@gmail.com
 [commit]
   gpgsign = true
 [color]
@@ -17,3 +14,10 @@
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
+[user]
+	name = Chandler May
+	email = chandler.camille.may@gmail.com
+[lfs "customtransfer.xet"]
+	path = git-xet
+	args = transfer
+	concurrent = true
