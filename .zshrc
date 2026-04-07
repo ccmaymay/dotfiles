@@ -85,6 +85,7 @@ bindkey -M vicmd v edit-command-line
 
 setopt no_share_history
 unsetopt share_history
+bindkey "^R" history-incremental-search-backward
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
