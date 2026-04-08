@@ -20,9 +20,17 @@ function afmagic_dashes {
   fi
 }
 
+function k8s_ctx {
+  command -v kubectl 2>&1 >/dev/null || return
+  kctx="$(kubectl config current-context)"
+  ([ "$kctx" = k8s-web ] && echo " ${FG[075]}[${FG[205]}${kctx}${FG[075]}]%{$reset_color%}") || \
+      ([ "$kctx" = k8s-dev ] && echo " ${FG[075]}[${FG[229]}${kctx}${FG[075]}]%{$reset_color%}") || \
+      echo " ${FG[075]}[${FG[153]}${kctx}${FG[075]}]%{$reset_color%}"
+}
+
 # primary prompt: dashed separator, directory and vcs info
 PS1="${FG[237]}\${(l.\$(afmagic_dashes)..-.)} %D{%f/%m/%y} %D{%L:%M:%S}%{$reset_color%}
-${FG[032]}%~\$(git_prompt_info)\$(hg_prompt_info) ${FG[105]}%(!.#.»)%{$reset_color%} "
+${FG[032]}%~\$(k8s_ctx)\$(git_prompt_info)\$(hg_prompt_info) ${FG[105]}%(!.#.»)%{$reset_color%} "
 PS2="%{$fg[red]%}\ %{$reset_color%}"
 
 # right prompt: return code, virtualenv and context (user@host)
