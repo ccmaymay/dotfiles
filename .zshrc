@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
@@ -12,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="random"
 #ZSH_THEME="af-magic"
-ZSH_THEME="af-magic-datetime"
+ZSH_THEME="af-magic-plus"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -86,6 +85,7 @@ bindkey -M vicmd v edit-command-line
 
 setopt no_share_history
 unsetopt share_history
+bindkey "^R" history-incremental-search-backward
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -121,3 +121,12 @@ then
     source ~/.zshrc_local
 fi
 
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.pixi/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
