@@ -116,11 +116,6 @@ alias vi='vim -p'
 # Show runtime of command if it takes more than this many seconds
 REPORTTIME=60
 
-if [ -f ~/.zshrc_local ]
-then
-    source ~/.zshrc_local
-fi
-
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pixi/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -132,3 +127,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 export PATH="$PATH:/opt/homebrew/opt/python@3.14/libexec/bin"
+export PATH="$PATH:/opt/R/arm64/gfortran/bin"
+
+if [ -f ~/.zshrc_local ]
+then
+    source ~/.zshrc_local
+fi
