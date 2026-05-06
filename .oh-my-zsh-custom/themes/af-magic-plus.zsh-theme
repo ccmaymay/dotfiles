@@ -22,7 +22,7 @@ function afmagic_dashes {
 
 function k8s_ctx {
   command -v kubectl 2>&1 >/dev/null || return
-  kctx="$(kubectl config current-context)"
+  kctx="$(kubectl config current-context 2>&1)" || return
   ([ "$kctx" = k8s-web ] && echo " ${FG[075]}[${FG[205]}${kctx}${FG[075]}]%{$reset_color%}") || \
       ([ "$kctx" = k8s-dev ] && echo " ${FG[075]}[${FG[229]}${kctx}${FG[075]}]%{$reset_color%}") || \
       echo " ${FG[075]}[${FG[153]}${kctx}${FG[075]}]%{$reset_color%}"
