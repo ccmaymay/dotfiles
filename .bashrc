@@ -2,7 +2,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 set -o vi
-bindkey -M vicmd v edit-command-line
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
