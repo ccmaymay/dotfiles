@@ -1,0 +1,24 @@
+conky.config = {
+    background = true,
+    draw_borders = true,
+    -- draw_outline = true,
+    own_window = true,
+    own_window_type = 'dock', -- normal, panel, dock
+    own_window_hints = 'above,sticky,undecorated',
+    -- own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 160,
+    gap_x = 96,
+    gap_y = 40,
+    update_interval=1,
+    minimum_height=40,
+    minimum_width=100,
+    text_buffer_size=512,
+    default_color='DFFFCF',
+    font = 'DejaVu Sans Mono:size=48',
+    use_xft = true,
+}
+
+conky.text = [[
+${time %I:%M}\
+]]
