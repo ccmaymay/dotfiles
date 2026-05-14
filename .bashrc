@@ -15,6 +15,9 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pixi/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 
+[ -s "/etc/bash_completion.d/git" ] && \. "/etc/bash_completion.d/git"
+[ -s "/usr/share/bash-completion/completions/git" ] && \. "/usr/share/bash-completion/completions/git"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
