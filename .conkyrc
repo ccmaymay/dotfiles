@@ -1,0 +1,42 @@
+conky.config = {
+    background = true,
+    -- draw_borders = true,
+    -- draw_outline = true,
+    own_window = true,
+    own_window_type = 'dock', -- normal, panel, dock
+    own_window_hints = 'undecorated,above,sticky',  -- skip_taskbar,skip_pager
+    -- own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 160,
+    gap_x = 96,
+    gap_y = 40,
+    update_interval=1,
+    minimum_height=50,
+    minimum_width=160,
+    text_buffer_size=556,
+    default_color='DFFFCF',
+    font = 'DejaVu Sans Mono:size=12',
+    use_xft = true,
+    double_buffer = true,
+    border_inner_margin = 10,
+}
+
+conky.text = [[
+${alignc}\
+${font DejaVu Sans:size=40}${time %-I:%M}\
+${font DejaVu Sans Mono:size=10}
+
+# ${voffset 5}
+# ${alignr 70}cpu ${cpu}%
+# cpu ${cpu}%
+cpu .... ${cpubar}
+# mem ${memperc}%
+mem .... ${membar}
+# gpu ${nvidia gpuutil 0}%
+gpu util ${nvidiabar gpuutil}
+gpu vmem ${nvidiabar memutil}\
+${voffset -8}
+# ${if_running minikube}
+# ${alignr}k8s ${exec kubectl get pod -o go-template='{{len .items}}'}p
+# ${endif}
+]]

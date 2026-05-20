@@ -2,7 +2,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 set -o vi
-bindkey -M vicmd v edit-command-line
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -15,6 +14,9 @@ alias vi='vim -p'
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pixi/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
+
+[ -s "/etc/bash_completion.d/git" ] && \. "/etc/bash_completion.d/git"
+[ -s "/usr/share/bash-completion/completions/git" ] && \. "/usr/share/bash-completion/completions/git"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
