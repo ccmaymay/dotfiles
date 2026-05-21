@@ -22,9 +22,12 @@ function afmagic_dashes {
 
 function k8s_ctx {
   command -v kubectl 2>&1 >/dev/null || return
-  local k8s_cluster="$(kubectl config view -o=go-template --template='{{(index .clusters 0).cluster.server}}' 2>/dev/null)" || return
-  local k8s_cluster_short="$(echo "$k8s_cluster" | sed 's|^https://\([^:/]*\).*|\1|;s/\.idies\.jhu\.edu//')" || return
-  local k8s_ns="$(kubectl config view -o=go-template --template='{{(index .contexts 0).context.namespace}}' 2>/dev/null)" || return
+  local k8s_cluster
+  k8s_cluster="$(kubectl config view -o=go-template --template='{{(index .clusters 0).cluster.server}}' 2>/dev/null)" || return
+  local k8s_cluster_short
+  k8s_cluster_short="$(echo "$k8s_cluster" | sed 's|^https://\([^:/]*\).*|\1|;s/\.idies\.jhu\.edu//')" || return
+  local k8s_ns
+  k8s_ns="$(kubectl config view -o=go-template --template='{{(index .contexts 0).context.namespace}}' 2>/dev/null)" || return
   if [ "$k8s_cluster_short" = k8sweb ]
   then
     echo -n " ${FG[075]}[${FG[211]}${k8s_cluster_short}${FG[075]}"
