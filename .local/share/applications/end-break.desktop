@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type = Application
+Terminal = false
+Name = End Break
+Comment = Kill Conky Process
+Icon = /home/cmay/Pictures/tomato.svg
+Exec = /bin/bash -c 'pkill conky'
