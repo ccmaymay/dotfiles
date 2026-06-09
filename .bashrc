@@ -31,8 +31,6 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="$PATH:/opt/homebrew/opt/python@3.14/libexec/bin"
 export PATH="$PATH:/opt/R/arm64/gfortran/bin"
 
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
 if [ -f ~/.bashrc_local ]
 then
     source ~/.bashrc_local
