@@ -129,6 +129,14 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="$PATH:/opt/homebrew/opt/python@3.14/libexec/bin"
 export PATH="$PATH:/opt/R/arm64/gfortran/bin"
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+if [ "$HOME/.docker/completions" ]
+then
+    fpath=("$HOME/.docker/completions" $fpath)
+    autoload -Uz compinit
+    compinit
+fi
+
 if [ -f ~/.zshrc_local ]
 then
     source ~/.zshrc_local
