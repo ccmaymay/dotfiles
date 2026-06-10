@@ -126,7 +126,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-export PATH="$PATH:/opt/homebrew/opt/python@3.14/libexec/bin"
+export PATH="$PATH:/opt/homebrew/opt/python@3.13/libexec/bin"
 export PATH="$PATH:/opt/R/arm64/gfortran/bin"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
@@ -135,6 +135,13 @@ then
     fpath=("$HOME/.docker/completions" $fpath)
     autoload -Uz compinit
     compinit
+fi
+
+export CLICOLOR=1
+
+if [ -f /opt/homebrew/bin/brew ]
+then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if [ -f ~/.zshrc_local ]
