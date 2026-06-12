@@ -1,6 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+[ -s "$HOME/.configure_shell.sh" ] && \. "$HOME/.configure_shell.sh"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,6 +77,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export EDITOR=vim
 autoload edit-command-line; zle -N edit-command-line
 set -o vi
 bindkey -M vicmd v edit-command-line
@@ -87,47 +86,17 @@ setopt no_share_history
 unsetopt share_history
 bindkey "^R" history-incremental-search-backward
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-export EDITOR=vim
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi='vim -p'
 
 # Show runtime of command if it takes more than this many seconds
 REPORTTIME=60
 
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.pixi/bin:$PATH"
-export PATH="$PATH:$HOME/.cargo/bin"
+if [ -f /opt/homebrew/bin/brew ]
+then
+    eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
-export PATH="$PATH:/opt/homebrew/opt/python@3.13/libexec/bin"
-export PATH="$PATH:/opt/R/arm64/gfortran/bin"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 if [ "$HOME/.docker/completions" ]
@@ -138,11 +107,6 @@ then
 fi
 
 export CLICOLOR=1
-
-if [ -f /opt/homebrew/bin/brew ]
-then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 
 if [ -f ~/.zshrc_local ]
 then
