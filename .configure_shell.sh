@@ -7,6 +7,7 @@ export LANG=en_US.UTF-8
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pixi/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export NVM_DIR="$HOME/.nvm"
